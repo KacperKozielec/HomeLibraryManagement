@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Biblioteka Domowa{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-[#f0f0f0] min-h-screen">
+    <nav class="bg-slate-800 text-white shadow-md">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="{% url 'index' %}" class="text-xl font-bold hover:text-amber-400 transition">Biblioteka Domowa</a>
+        <div class="flex items-center gap-6">
+          <a href="{% url 'index' %}" class="hover:text-amber-400 transition">Ksiazki</a>
+          <a href="#" class="hover:text-amber-400 transition">Autorzy</a>
+          <a href="#" class="hover:text-amber-400 transition">Wydawcy</a>
+          <a href="#" class="hover:text-amber-400 transition">Serie</a>
+          <a href="#" class="hover:text-amber-400 transition">Gatunki</a>
+          <a href="#" class="hover:text-amber-400 transition">Tematy</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="fixed bottom-0 w-full bg-slate-800 text-white shadow-md">
+         <div class="max-w-6xl mx-auto px-4 py-3 text-center text-sm">
+            &copy; 2024 Biblioteka Domowa. Wszelkie prawa zastrzeżone.
+         </div>
+    </footer>
+  </body>
+</html>

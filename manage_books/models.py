@@ -3,15 +3,20 @@ import pytz
 
 # Create your models here.
 class Book(models.Model):
+
     COVERS = [
         ('hardcover', 'Hardcover'),
         ('paperback', 'Paperback'),
         ('ebook', 'E-book'),
         ('audiobook', 'Audiobook'),
     ] 
+
     LANGUAGE = [
         ('english', 'English'),
         ( 'polish', 'Polish'),
+        ('german', 'German'),
+        ('french', 'French'),
+        ('spanish', 'Spanish'),
         ('hebrew', 'Hebrew'),
         ('other', 'Other'),
     ]
