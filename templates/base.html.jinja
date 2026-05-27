@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Biblioteka Domowa{% endblock %}</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body class="bg-[#f0f0f0] min-h-screen">
-    <nav class="bg-slate-800 text-white shadow-md">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="{% url 'index' %}" class="text-xl font-bold hover:text-amber-400 transition">Biblioteka Domowa</a>
-        <div class="flex items-center gap-6">
-          <a href="{% url 'index' %}" class="hover:text-amber-400 transition">Ksiazki</a>
-          <a href="#" class="hover:text-amber-400 transition">Autorzy</a>
-          <a href="#" class="hover:text-amber-400 transition">Wydawcy</a>
-          <a href="#" class="hover:text-amber-400 transition">Serie</a>
-          <a href="#" class="hover:text-amber-400 transition">Gatunki</a>
-          <a href="#" class="hover:text-amber-400 transition">Tematy</a>
-        </div>
-      </div>
+    <title>Ewidencja biblioteczna</title>
+</head>
+<body class="bg-neutral-300">
+    <header class="bg-emerald-950 text-white p-4 text-center sticky top-0 w-full">
+        <h1 class="text-2xl font-bold">Ewidencja biblioteczna</h1>
+    </header>
+    <nav class="bg-emerald-800 text-white p-4">
+        <ul class="flex space-x-4">
+            <li><a href="{% url 'index' %}" class="hover:underline">Książki</a></li>
+            <li><a href="{% url 'authors' %}" class="hover:underline">Autorzy</a></li>
+            <li><a href="{% url 'publishers' %}" class="hover:underline">Wydawcy</a></li>
+            <li><a href="{% url 'series_list' %}" class="hover:underline">Serie</a></li>
+            <li><a href="{% url 'notes' %}" class="hover:underline">Notatki</a></li>
+        </ul>
     </nav>
-
-    <main class="max-w-6xl mx-auto">
-      {% block content %}{% endblock %}
+    <main class="pb-16">
+        <h2 class="w-full bg-white rounded-lg shadow-md p-4 text-lg font-semibold text-center">{% block title %}{% endblock %}</h2>
+        {% block content %}
+        {% endblock %}
     </main>
-    <footer class="fixed bottom-0 w-full bg-slate-800 text-white shadow-md">
-         <div class="max-w-6xl mx-auto px-4 py-3 text-center text-sm">
-            &copy; 2024 Biblioteka Domowa. Wszelkie prawa zastrzeżone.
-         </div>
+    <footer class="bg-emerald-950 text-white p-4 text-center fixed bottom-0 w-full">
+        &copy; 2026 Katarzyna Wójcik
     </footer>
-  </body>
+</body>
 </html>
