@@ -1,9 +1,12 @@
-from django.shortcuts import HttpResponse, render
-from manage_books.models import Book, Author, Publisher, Series, Note
+from django.shortcuts import render
+from manage_books.models import Book, Genre, Author, Publisher, Series, Note
+
 
 def index(request):
+    genres = Genre.objects.all()
+    authors = Author.objects.all()
     books = Book.objects.all()
-    return render(request, 'manage_books/index.html.jinja', {'books': books})
+    return render(request, 'manage_books/index.html.jinja', {'genres': genres, 'authors': authors, 'books': books})
 
 def book(request, book_id):
     return render(request, 'manage_books/book.html.jinja', {'book_id': book_id})
